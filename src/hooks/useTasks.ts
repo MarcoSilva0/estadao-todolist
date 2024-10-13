@@ -12,9 +12,13 @@ const useTasks = () => {
     },
   });
 
-  const usePostTasks = useMutation({
+  const useCreateTasks = useMutation({
     mutationFn: async (newTask: any) => {
-      const { data } = await api.post("/todos", newTask);
+      const { data } = await api.post("/todos", {
+        ...newTask,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
       return data;
     },
     onSuccess: () => {
@@ -25,7 +29,7 @@ const useTasks = () => {
   return {
     data,
     isLoading,
-    usePostTasks,
+    useCreateTasks: useCreateTasks.mutate,
   };
 };
 
