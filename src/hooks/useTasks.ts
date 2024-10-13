@@ -1,10 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import api from "../config/api";
+import { CreateTaskDTO, TasksDTO } from "../models";
 
 const useTasks = () => {
   const queryClient = useQueryClient();
 
-  const { data, isLoading } = useQuery<any[]>({
+  const { data, isLoading } = useQuery<TasksDTO[]>({
     queryKey: ["todos"],
     queryFn: async () => {
       const { data } = await api.get("/todos");
@@ -13,7 +14,7 @@ const useTasks = () => {
   });
 
   const useCreateTasks = useMutation({
-    mutationFn: async (newTask: any) => {
+    mutationFn: async (newTask: CreateTaskDTO) => {
       const { data } = await api.post("/todos", {
         ...newTask,
         createdAt: new Date(),
