@@ -3,6 +3,7 @@
     {
       "id": 1,
       "title": "Lavar louça",
+      "description": "Mais informações do card",
       "status": "pendente",
       "createdAt": "2024-10-13T14:34:57.492Z",
       "updatedAt": "2024-10-13T14:34:57.492Z"
