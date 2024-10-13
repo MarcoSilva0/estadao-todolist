@@ -1,0 +1,11 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Lavar louça",
+      "status": "pendente",
+      "createdAt": "2024-10-13T14:34:57.492Z",
+      "updatedAt": "2024-10-13T14:34:57.492Z"
+    }
+  ]
+}
